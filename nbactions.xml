@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>run</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
+            </goals>
+            <properties>
+                <exec.args>-classpath %classpath com.unicauca.arat.test.Main</exec.args>
+                <exec.executable>java</exec.executable>
+            </properties>
+        </action>
+        <action>
+            <actionName>CUSTOM-clean install</actionName>
+            <displayName>clean install</displayName>
+            <goals>
+                <goal>clean:clean</goal>
+                <goal>install:install</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-assembly</actionName>
+            <displayName>assembly</displayName>
+            <goals>
+                <goal>clean:clean</goal>
+                <goal>assembly:single</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-compile install</actionName>
+            <displayName>compile install</displayName>
+            <goals>
+                <goal>clean:clean</goal>
+                <goal>compile</goal>
+                <goal>install</goal>
+            </goals>
+        </action>
+    </actions>
